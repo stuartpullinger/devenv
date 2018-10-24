@@ -1,12 +1,50 @@
 ---
 - hosts: all
-  become: true
   tasks:
     - name: Install packages
+      become: true
       package:
         name: "{{ item }}"
         state: present
       with_items:
+        - cifs-utils
         - byobu
         - git
         - vim
+
+    - name: Append Vi setting to ~/.inputrc (GNU Readline)
+      lineinfile:
+        path: "{{ ansible_env.HOME  + '/.inputrc' }}"
+        insertafter: EOF
+        state: present
+        create: yes
+        line: "set editing-mode vi"
+
+    - name: Append Vi setting to ~/.bashrc
+      lineinfile:
+        path: "{{ ansible_env.HOME  + '/.bashrc' }}"
+        insertafter: EOF
+        line: "set -o vi"
+
+    - name: Create the directory for vim-plug
+      file:
+        path: "{{ ansible_env.HOME + '/.vim/autoload/' }}"
+        state: directory
+
+    - name: Download vim-plug
+      get_url:
+        url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        dest: "{{ ansible_env.HOME + '/.vim/autoload/' }}"
+
+    - name: Create the directory for the vim plugins
+      file:
+        path: "{{ ansible_env.HOME + '/.vim/plugged/' }}"
+        state: directory
+
+    - name: Copy the vimrc
+      copy:
+        src: vimrc
+        dest: "{{ ansible_env.HOME + '/.vimrc' }}"
+
+    - name: Run vim to install the plugins
+      command: vim +PlugInstall +qall

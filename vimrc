@@ -10,4 +10,7 @@ Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
-color solarized
+" Set colorschemes
+set background=dark
+let g:lightline = {'colorscheme': 'solarized',}
+colorscheme solarized

@@ -48,3 +48,15 @@
 
     - name: Run vim to install the plugins
       command: vim +PlugInstall +qall
+
+    - name: Download terminal colours for solarized dark theme
+      get_url:
+        url: https://raw.githubusercontent.com/mavnn/mintty-colors-solarized/master/sol.dark
+        dest: "{{ ansible_env.HOME + '/.sol.dark' }}"
+        
+    - name: Append colourscheme setting to ~/.bashrc
+      lineinfile:
+        path: "{{ ansible_env.HOME  + '/.bashrc' }}"
+        insertafter: EOF
+        line: "source ~/.sol.dark"
+

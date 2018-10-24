@@ -72,4 +72,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "devenv.yml"
   end
+
+  # Sync folder using SMB - for Windows and MacOS hosts only
+  # https://www.vagrantup.com/docs/synced-folders/smb.html
+  config.vm.synced_folder ".", "/vagrant", type: "smb"
 end

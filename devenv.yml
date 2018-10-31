@@ -11,6 +11,8 @@
         - byobu
         - git
         - vim
+      tags:
+        - packages
 
     - name: Append Vi setting to ~/.inputrc (GNU Readline)
       lineinfile:

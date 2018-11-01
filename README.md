@@ -11,6 +11,14 @@ source venv/bin/activate
 pip install --upgrade pip
 pip install ansible
 ```
+Also for Centos do:
+```Shell
+yum install vim-enhanced
+```
+and also append to the ~/.bashrc:
+```Shell
+alias view="vim -R"
+```
 
 # Useful Ansible commands
 ```Shell
@@ -30,3 +38,6 @@ vagrant plugin install vagrant-vbguest		#Install the Virtualbox Guest Additions 
   + Python development
   + Java development
     + in vimrc: Plug 'mikelue/vim-maven-plugin'
++ Add ctags support
+  + package to install?
+  + vim plugin or builtin?

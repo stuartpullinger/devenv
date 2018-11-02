@@ -41,3 +41,5 @@ vagrant plugin install vagrant-vbguest		#Install the Virtualbox Guest Additions 
 + Add ctags support
   + package to install?
   + vim plugin or builtin?
++ configure git to use vimdiff
+  + See: https://stackoverflow.com/questions/3713765/viewing-all-git-diffs-with-vimdiff

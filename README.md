@@ -43,3 +43,9 @@ vagrant plugin install vagrant-vbguest		#Install the Virtualbox Guest Additions 
   + vim plugin or builtin?
 + configure git to use vimdiff
   + See: https://stackoverflow.com/questions/3713765/viewing-all-git-diffs-with-vimdiff
++ Configure vagrant for more cores (and memory?)
+  + In the Vagrantfile:
+    + config.vm.provider "virtualbox" do |v|
+        v.memory = 1024
+        v.cpus = 2
+      end

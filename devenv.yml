@@ -11,6 +11,8 @@
         - byobu
         - git
         - vim
+        - psmisc
+        - htop
       tags:
         - packages
 

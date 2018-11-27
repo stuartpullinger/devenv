@@ -22,7 +22,7 @@ alias view="vim -R"
 
 # Useful Ansible commands
 ```Shell
-ansible-playbook --connection=local --inventory=127.0.0.1, devenv.yml
+ansible-playbook --connection=local --inventory=127.0.0.1, --ask-become-pass devenv.yml
 ```
 
 # Useful Vagrant commands
@@ -51,3 +51,6 @@ vagrant plugin install vagrant-vbguest		#Install the Virtualbox Guest Additions 
         v.memory = 1024
         v.cpus = 2
       end```
+
+# Known Issues
++ On first run, running Vim to install the plugins hangs as it cannot find the colorscheme.

@@ -44,13 +44,6 @@ vagrant plugin install vagrant-vbguest		#Install the Virtualbox Guest Additions 
   + plus ctrlP and tagbar as described [here](https://andrew.stwrt.ca/posts/vim-ctags/)
 + configure git to use vimdiff
   + See: https://stackoverflow.com/questions/3713765/viewing-all-git-diffs-with-vimdiff
-+ Configure vagrant for more cores (and memory?)
-  + In the Vagrantfile:
-    + ```Ruby
-      config.vm.provider "virtualbox" do |v|
-        v.memory = 1024
-        v.cpus = 2
-      end```
 
 # Known Issues
 + On first run, running Vim to install the plugins hangs as it cannot find the colorscheme.

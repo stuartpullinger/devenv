@@ -8,6 +8,7 @@
         state: present
       with_items:
         - cifs-utils
+        - ctags
         - byobu
         - git
         - vim

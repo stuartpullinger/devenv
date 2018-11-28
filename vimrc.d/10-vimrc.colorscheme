@@ -1,0 +1,5 @@
+
+" Set colorschemes
+set background=dark
+let g:lightline = {'colorscheme': 'solarized',}
+colorscheme solarized

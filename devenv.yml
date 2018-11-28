@@ -46,13 +46,18 @@
         path: "{{ ansible_env.HOME + '/.vim/plugged/' }}"
         state: directory
 
-    - name: Copy the vimrc
+    - name: Copy the plugin vimrc
       copy:
-        src: vimrc
-        dest: "{{ ansible_env.HOME + '/.vimrc' }}"
+        src: vimrc.d/00-vimrc.plugins
+        dest: "{{ ansible_env.HOME + '/.vimrc.plugins' }}"
 
     - name: Run vim to install the plugins
-      command: vim +PlugInstall +qall
+      command: vim -u "{{ ansible_env.HOME + '/.vimrc.plugins' }}" +PlugInstall +qall
+
+    - name: Assemble the vimrc
+      assemble:
+        src: vimrc.d
+        dest: "{{ ansible_env.HOME + '/.vimrc' }}"
 
     - name: Download terminal colours for solarized dark theme
       get_url:

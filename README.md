@@ -46,4 +46,6 @@ vagrant plugin install vagrant-vbguest		#Install the Virtualbox Guest Additions 
   + See: https://stackoverflow.com/questions/3713765/viewing-all-git-diffs-with-vimdiff
 
 # Known Issues
-+ On first run, running Vim to install the plugins hangs as it cannot find the colorscheme.
++ ''vagrant up' fails the first time as the VM needs to install cifs-utils in order to mount the shared folder but that is installed by the provision scripts which are on the shared folder...
+  + Related issues here: https://github.com/hashicorp/vagrant/issues/6311
+  + and here: https://github.com/hashicorp/vagrant/issues/936

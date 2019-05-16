@@ -54,6 +54,7 @@ vagrant plugin install vagrant-vbguest		#Install the Virtualbox Guest Additions 
   + plus ctrlP and tagbar as described [here](https://andrew.stwrt.ca/posts/vim-ctags/)
 + configure git to use vimdiff
   + See: https://stackoverflow.com/questions/3713765/viewing-all-git-diffs-with-vimdiff
++ add subversion + krb5-workstation to access subversion/trac at work
 
 # Known Issues
 + ''vagrant up' fails the first time as the VM needs to install cifs-utils in order to mount the shared folder but that is installed by the provision scripts which are on the shared folder...
